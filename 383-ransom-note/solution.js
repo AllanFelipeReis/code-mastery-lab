@@ -6,9 +6,9 @@
 var canConstruct = function (ransomNote, magazine) {
     var magazineLetters = {};
 
-    for(var i = 0; i < magazine.length; i++) {
+    for (var i = 0; i < magazine.length; i++) {
         var letter = magazine.charAt(i)
-        if(magazineLetters[letter] === undefined) {
+        if (magazineLetters[letter] === undefined) {
             magazineLetters[letter] = 1;
         }
         else {
@@ -16,14 +16,14 @@ var canConstruct = function (ransomNote, magazine) {
         }
     }
 
-    for(var i = 0; i < ransomNote.length; i++) {
+    for (var i = 0; i < ransomNote.length; i++) {
         var r = ransomNote.charAt(i);
 
-        if(magazineLetters[r] === undefined) return false
+        if (magazineLetters[r] === undefined) return false
 
         var currentCount = magazineLetters[r]
 
-        if(currentCount === 0) return false
+        if (currentCount === 0) return false
 
         magazineLetters[r]--
     }
